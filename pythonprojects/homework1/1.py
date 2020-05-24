@@ -9,7 +9,7 @@
 @WebSite :   www.cnblogs.com/DesignerA
 '''
 # Start typing your code from here
-
+#第一次作业
 #元素输出和查找：  请输出0-50之间的奇数，偶数，质数；能同时被2和3整除的数；
 list1=list(range(51))
 print('0-50之间的奇数有:')
