@@ -14,7 +14,7 @@
 import os
 def decorator(func):
     def diary_write():
-        sentence='你调用了一个函数'
+        sentence='你成功调用了一个函数'
         f=open('/Users/maxiaoyu/Desktop/python/pythonprojects/diary.txt','w')
         f.write(sentence)
         f.close()
