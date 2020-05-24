@@ -9,7 +9,7 @@
 @WebSite :   www.cnblogs.com/DesignerA
 '''
 # Start typing your code from here
-
+#练习
 
 #输出字符串
 '''
