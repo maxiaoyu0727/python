@@ -14,35 +14,26 @@
 #另外一个进程接收并打印消息；
 
 
-#仿照课件写的
-import socket
-import threading
 
+from multiprocessing import Process,Queue
+import time
 
-def send_msg(udp_socket):
-    """获取键盘数据，并将其发送给对方"""
-    while True:
-        msg = input("\n请输入要发送的内容:")
-        dest_ip = input("\n请输入对方的ip地址:")
-        dest_port = int(input("\n请输入对方的port:"))
-        udp_socket.sendto(msg.encode("utf-8"), (dest_ip, dest_port))
+def write(q,sentence):
+    q.put(sentence)
 
-
-def recv_msg(udp_socket):
-    """接收数据并显示"""
-    while True:
-        recv_msg = udp_socket.recvfrom(1024)
-        recv_ip = recv_msg[1]
-        recv_msg = recv_msg[0].decode("utf-8")
-        print(">>>%s:%s" % (str(recv_ip), recv_msg))
-
+def read(q):
+    while(True):
+        sentence = q.get(True)
+        print(sentence)
 
 def main():
-    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    udp_socket.bind(("", 7890))
-    t = threading.Thread(target=recv_msg, args=(udp_socket,))
-    t.start()
-    send_msg(udp_socket)
+    q=Queue()
+    sentence=input('请输入聊天内容：')
+    A=Process(target=write,args=(q,sentence,))
+    B=Process(target=read,args=(q,))
+    A.start()
+    B.start()
+    A.join()
+    B.terminate()
 
-if __name__ == "__main__":
-    main()
+main()
