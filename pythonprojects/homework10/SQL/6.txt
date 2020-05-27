@@ -1,0 +1,5 @@
+⑥ 查询未删除男生信息，按年龄降序
+select * 
+from student 
+where gender='男' and is_delete=0 
+order by age desc

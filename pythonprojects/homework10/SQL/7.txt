@@ -1,0 +1,4 @@
+⑦  查询女生的总数
+select count(*)
+from students
+where gender='女'

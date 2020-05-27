@@ -1,0 +1,8 @@
+⑨ 分别统计性别为男/女的人年龄平均值
+select avg(age)
+from students
+where gender='男'
+
+select avg(age)
+from students
+where gender='女'

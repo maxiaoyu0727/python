@@ -1,0 +1,4 @@
+① 查询所有男生的姓名，年龄，所在班级名称；
+select students.name,students.age,classes.name 
+from students,classes 
+where gender="男" and classes.name=students.cls_id

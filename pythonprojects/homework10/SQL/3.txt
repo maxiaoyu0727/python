@@ -1,0 +1,4 @@
+③ 查询姓黄并且“名”是一个字的学生；
+select * 
+from students 
+where name like "黄_"
