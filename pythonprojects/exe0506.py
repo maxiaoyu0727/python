@@ -46,11 +46,11 @@ update_sql = "update message_board set time=20200102 where id='101'"
 select_sql="select * from message_board"
 
 #cursor.execute(build_sql)
-#cursor.execute(add_sql1)
-#cursor.execute(add_sql2)
+cursor.execute(add_sql1)
+cursor.execute(add_sql2)
 #cursor.execute(delete_sql)
 #cursor.execute(update_sql)
-cursor.execute(select_sql)
+#cursor.execute(select_sql)
 result=cursor.fetchall()
 print(result)
 db.commit()
