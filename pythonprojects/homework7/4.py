@@ -34,16 +34,16 @@ for x in list:
 
     dict1['example'] = soup_test.find(id='main').h1.text
     
-    l1=[]
+    list1=[]
     for i in soup_test.find_all('pre', class_='prettyprint'):
-        l1.append(i.text)
-    dict1['ans']=l1
+        list1.append(i.text)
+    dict1['ans']=list1
 
 #保存文件
-    with open('/Users/maxiaoyu/Desktop/python/pythonprojects/request_code.txt','a+',encoding='utf-8') as f:
-        f.write(dict1['example']+'\n')
+    with open('/Users/maxiaoyu/Desktop/python/pythonprojects/request_code.txt','a+',encoding='utf-8') as file:
+        file.write(dict1['example']+'\n')
         for i in dict1['ans']:
-            f.write("**************************************")
-            f.write('\n')
-            f.write(i+'\n')
+            file.write("**************************************")
+            file.write('\n')
+            file.write(i+'\n')
             
