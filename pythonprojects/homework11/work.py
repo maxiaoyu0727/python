@@ -7,10 +7,11 @@ from datetime import datetime
 import pymysql
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import config1
 
 
 # 打开数据库连接
-db = pymysql.connect("localhost","root","27718872maxiaoyu","exe1" )
+db = pymysql.connect(host=config1.HOST,user=config1.USERNAME,password=config1.PASSWORD,database=config1.DATABASE )
  
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()

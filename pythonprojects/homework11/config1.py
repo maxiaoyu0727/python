@@ -1,0 +1,6 @@
+HOST = 'localhost'
+USERNAME = 'root'
+PASSWORD = 'mxyzka'
+DATABASE = 'exe1'
+DIALECT = 'mysql'
+DRIVER = 'pymysql'
